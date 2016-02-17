@@ -1,0 +1,165 @@
+-- Copyright (C) 1991-2013 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+
+-- PROGRAM		"Quartus II 64-Bit"
+-- VERSION		"Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
+-- CREATED		"Tue Feb 02 12:08:12 2016"
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+
+LIBRARY work;
+
+ENTITY cpu_phase1 IS 
+	PORT
+	(
+
+	);
+END cpu_phase1;
+
+ARCHITECTURE bdf_type OF cpu_phase1 IS 
+
+COMPONENT reg32bit
+	PORT(ld : IN STD_LOGIC;
+		 rst_n : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 d : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	);
+END COMPONENT;
+
+SIGNAL	clk :  STD_LOGIC;
+SIGNAL	d :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	ld :  STD_LOGIC;
+SIGNAL	q :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	rst_n :  STD_LOGIC;
+
+
+BEGIN 
+
+
+
+b2v_r0_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r10_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r11_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r12_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r13_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r14_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r15_reg32bit22 : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r1_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r2_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r3_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r4_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r5_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r6_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r7_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r8_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+b2v_r9_reg32bit : reg32bit
+PORT MAP(ld => ld,
+		 rst_n => rst_n,
+		 clk => clk,
+		 d => d);
+
+
+END bdf_type;

@@ -1,0 +1,110 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use STD.textio.all;
+
+entity reg32bit_tb is
+end reg32bit_tb;
+
+architecture behav of reg32bit_tb is
+
+	constant clk_SEMIPERIOD0: time := 25 ns;
+	constant clk_SEMIPERIOD1: time := 15 ns;
+	constant clk_PERIOD 	: time := clk_SEMIPERIOD0+clk_SEMIPERIOD1;
+	constant RESET_TIME 	: time := 15*clk_PERIOD + 9 ns;
+
+	signal clk, rst_n		   : std_logic;
+
+	-- signals for debugging and tb control
+	signal count 				   : std_logic_vector(23 downto 0) :=
+										(others=> '0');
+	signal int_count 			   : integer := 0;
+	signal start 				   : integer := 0;
+	signal done					   : integer := 0;
+	signal counter_data			   : std_logic_vector(23 downto 0) :=
+										(others=> '0');
+	signal int_counter_data : integer := 0;
+
+	
+		-- signals for DUT (Device Under Test)
+	signal ld : std_logic := '0';
+	signal D : std_logic_vector(31 downto 0);
+	signal Q : std_logic_vector(31 downto 0);
+	
+	
+	-- DUT declaration
+	component reg32bit is
+ port (
+	 clk, rst_n, ld : in std_logic;
+	 d : in std_logic_vector(31 downto 0);
+	 q: out std_logic_vector(31 downto 0)
+	 );
+ end component;
+	
+	
+-- TB architecture definition
+begin
+	-- DUT instance
+	DUT : reg32bit
+		port map (
+			clk => clk, 
+			rst_n => rst_n,
+			ld => ld,
+			D => D,
+			Q => Q
+		);
+	-- RESET
+	start_process: process
+	begin
+		start <= 1;
+		rst_n <= '1';
+		wait for 1 ns;
+		rst_n <= '0';
+		wait for RESET_TIME;
+		rst_n <= '1';
+		
+		wait;
+	end process start_process;
+	
+	
+	read_file_process: process(clk)
+	begin
+		if (clk='0') and (start = 1) then
+			ld <= '1';
+			D <= x"10101001";
+		end if;
+	end process read_file_process;
+
+-- terminate the simulation when there are no more data in datafile
+	done_process: process(done)
+		variable outputline : LINE;
+	begin
+		if (done=1) then
+			write(outputline, string'("End simulation - "));
+			write(outputline, string'("cycle counter is "));
+			write(outputline, int_count);
+			writeline(output, outputline);
+			assert false
+				report "NONE. End of simulation."
+				severity failure;
+		end if;
+	end process done_process;
+	
+	clk_process: process
+	begin
+		if clk = '0' then
+			clk <= '1';
+			wait for clk_SEMIPERIOD1;
+		else
+			clk <= '0';
+			wait for clk_SEMIPERIOD0;
+			count <= std_logic_vector(unsigned(count) + 1);
+			int_count <= int_count + 1;
+		end if;
+		if done = 1 then
+			wait;
+		end if;
+	end process clk_process;
+	
+end behav;
+

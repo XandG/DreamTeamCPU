@@ -1,0 +1,77 @@
+m255
+K3
+13
+cModel Technology
+Z0 dZ:\ELEC374\bus\simulation\modelsim
+Ereg32
+Z1 w1454183669
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dZ:\ELEC374\bus\simulation\modelsim
+Z5 8Z:/ELEC374/bus/reg32.vhd
+Z6 FZ:/ELEC374/bus/reg32.vhd
+l0
+L4
+VMlQzefV2cOEZJGcRS>HQ93
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1454187993.162000
+Z9 !s90 -reportprogress|300|-93|-work|work|Z:/ELEC374/bus/reg32.vhd|
+Z10 !s107 Z:/ELEC374/bus/reg32.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 _5[XWdLCUF[;_R:6YADlR1
+!i10b 1
+Adescription
+R2
+R3
+DEx4 work 5 reg32 0 22 MlQzefV2cOEZJGcRS>HQ93
+l15
+L13
+VE@n3SLIi76@6AbU8EQ=I82
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 dik;Kmh<nogk^;L>[Rj5;1
+!i10b 1
+Ereg32_tb
+Z13 w1454187950
+Z14 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R2
+R3
+R4
+Z15 8Z:/ELEC374/bus/reg32_tb.vhd
+Z16 FZ:/ELEC374/bus/reg32_tb.vhd
+l0
+L6
+V]979PY0?3<JEdh8oGEU<h1
+!s100 hj4]U8RedZkk;TUgT]S<`3
+R7
+31
+!i10b 1
+Z17 !s108 1454187993.835000
+Z18 !s90 -reportprogress|300|-93|-work|work|Z:/ELEC374/bus/reg32_tb.vhd|
+Z19 !s107 Z:/ELEC374/bus/reg32_tb.vhd|
+R11
+R12
+Abehav
+R14
+R2
+R3
+DEx4 work 8 reg32_tb 0 22 ]979PY0?3<JEdh8oGEU<h1
+l46
+L9
+VCa@?FBS3PX16kh0OLaL:30
+!s100 V?5gh=:DY?`m2k:@RkzbJ1
+R7
+31
+!i10b 1
+R17
+R18
+R19
+R11
+R12
